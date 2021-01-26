@@ -3,7 +3,6 @@
 #水たまりはWで示されるが、周り８マスにWがある場合は、
 #同一の水たまりとみなす。
 
-
 def main_method(N,M,lake):
     yinput = int(N) #Nはy軸
     xinput = int(M) #Mはx軸

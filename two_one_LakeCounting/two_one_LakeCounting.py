@@ -9,12 +9,9 @@ def main_method(N,M,lake):
     xinput = int(M) #Mはx軸
     lakelist = lake
 
-
     def dfs(y,x):
-        
         #Wを.に置き換える
-        lakelist[y][x] = "."
-        
+        lakelist[y][x] = "."        
 
         #周りにあるWも.に置き換える（同一の水たまりを全て.に変換する）
         for dx in range(-1,2):
@@ -24,10 +21,8 @@ def main_method(N,M,lake):
                 
                 if 0 <= checkx < xinput and 0 <= checky < yinput and not lakelist[checky][checkx] == "." :
                     dfs(checky,checkx)
-
         return
     
-
     def searchw():
         output_count = 0
         for i in range(yinput):

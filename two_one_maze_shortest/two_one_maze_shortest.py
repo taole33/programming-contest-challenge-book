@@ -45,6 +45,8 @@ def main_method(N,M,maze):
         queue.append([sy,sx])
         d[sy][sx] = 0
 
+        #queueに移動先の(y,x)の座標を保存しておき、queueが空になるまで動作する
+        #1回目はsy,sx（スタート地点）の座標
         while not len(queue) == 0:
             popresult = queue.pop(0)
             resulty = popresult[0]
@@ -64,7 +66,9 @@ def main_method(N,M,maze):
                         d[ny][nx] = d[resulty][resultx] + 1 
                 except IndexError:
                     pass
-                
+
+        #戻り値はリストdのgy、gx座標に保存されている数字。
+        #戻り値がINFだった場合はゴールできていないということ。
         return d[gy][gx]
 
     return address_maze()

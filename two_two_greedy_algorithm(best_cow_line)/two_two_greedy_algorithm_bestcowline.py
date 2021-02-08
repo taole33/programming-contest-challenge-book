@@ -8,11 +8,11 @@
 #
 #アルゴリズムの答え
 #「Sの先頭と末尾を比べ、小さい方を末尾に追加するを繰り返す」だと
-# 先頭と末尾が同じケースを考慮されていない。
+# 先頭と末尾が同じケースを考慮しきれていない。
 #よって、Sを反転させた「S'」を作成し「末尾と比べる」のではなく、S'と比べるようにする。
 #・S[i]とS'[N-i]の比較で、Sが小さいのであれば、Sの先頭を１文字削除し、Tの末尾に追加する。
 #・S'が小さいのであれば、Sの末尾を１文字削除し、Tの末尾に追加する。
-#同じ文字になった場合は、S[i+1]、S'[N-i-1]を比較する・・・を繰り返して同じ文字が続かなくなるまで評価する。
+#同じ文字になった場合は、S[i+1]、S'[N-i-1]を比較する・・・を繰り返して同じ文字が続かなくなるまで大小を評価する。
 
 def main_method(N,S):
 
@@ -25,7 +25,7 @@ def main_method(N,S):
         left_judge = False
         i = 0
         #左から見た場合(S)と右から見た場合(S')を比較
-        #forで回してチェックしており、==のときはbreakしないので
+        #==のときはbreakしないので
         #同じ文字列が続いた場合であっても、先頭と末尾、どちらが小さくなるか判定できる
         while start_position + i <= end_position:
             if S[start_position + i] < S[end_position - i]:
@@ -38,10 +38,10 @@ def main_method(N,S):
 
             i = i + 1
 
+        #Sのほうが小さいなら、S[i]を出力、そうでないならS'[i]を出力
         if left_judge:
             output_T.append(S[start_position])
             start_position = start_position + 1
-            
         else:
             output_T.append(S[end_position])
             end_position = end_position - 1

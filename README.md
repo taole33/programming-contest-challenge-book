@@ -1,3 +1,3 @@
 # programming-contest-challenge-book
-アルゴリズム学習です。
-（01〜08はpythonで、09〜はCで記述）
+アルゴリズム学習です。  
+（01〜08はpythonで記述、09〜はCで記述）
